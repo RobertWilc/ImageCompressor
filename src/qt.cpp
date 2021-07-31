@@ -37,7 +37,7 @@ void QTCompressor::getHeaderInfo()
   getline(infile, _comments);
   ss << infile.rdbuf();
   ss >> _height >> _width >> _maxVal;
-
+  /*
   for(int row = 0; row < _height; ++row)
   {
     for(int col = 0; col < _width; ++col)
@@ -45,6 +45,7 @@ void QTCompressor::getHeaderInfo()
       ss >> img[row][col];
     }
   }
+  */
   infile.close();
 }
 
