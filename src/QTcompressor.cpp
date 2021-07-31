@@ -4,6 +4,7 @@
 #include <sstream>
 #include <cmath>
 #include <vector>
+#include "qt.h"
 using namespace std;
 
 
@@ -145,8 +146,12 @@ void writeToFile(vector<vector<int>> img, string version, string comments, int w
 
 
 int main() {
+    QTCompressor qt;
+    qt.writeToFile();
+    qt.getHeaderInfo();
+    cout << qt.getStuff();
 
-    /* VARIABLES FOR PGMA FILE */
+    /*  **** LEGACY VARIABLES. LOOK IN qt.h FOR UPDATED VARIABLES ****
     int height = 0;
     int width = 0;
     int x = 0;
@@ -154,20 +159,22 @@ int main() {
     string version = "";
     string comments = "";
     int max_val = 0;
-
+    */
 	/* READS IMAGE FILE AND STORES HEADER INFORMATION */
+/*
     stringstream ss; //Used to read the image into variables.
     ifstream infile("baboon.pgma", ios::binary); //Opens the image
     getHeaderInfo(version, comments, height, width, max_val, ss, infile);
-
+*/
     /* THE TWO DIMENSIONAL VECTOR ARRAY OF IMAGE  *
      * Each pixel is a number from 0-255          */
+/*
     vector<vector<int>> img(height, vector<int> (width));
 
     createArray(img, width, height, ss);
     splitArray(img, x, y, width, height);
 
     writeToFile(img, version, comments, width, height, max_val);
-
+*/
     return 0;
 }
